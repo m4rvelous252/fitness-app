@@ -1,13 +1,237 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --main-theme-color: rgb(12, 187, 172);
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --accent-color: rgb(11, 114, 105);
+  --grey: #d1cecd;
+  --overlay: rgb(11, 114, 105, 0.85);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #4b4b4b;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: var(--text-color);
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+input, select, .timePicker {
+  color: var(--text-color);
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-bottom: 1px solid var(--main-theme-color);
+  background-color: var(--bg-color);
+  /* color: var(--main-theme-color); */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 5px var(--main-theme-color);
+}
+
+textarea{
+  resize: none;
+}
+
+li{
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 85px;
+  background-color: var(--bg-color);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav{
+  width: 100%;
+}
+
+.navbar-list-items{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.navbar-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.navbar-item p{
+  font-size: 1rem;
+  margin: 0;
+}
+
+.primaryColor{
+  color: var(--main-theme-color);
+}
+
+.greyColor{
+  color: var(--grey);
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageContainer{
+  padding: 1rem;
+  height: calc(100vh - 85px);
+  overflow-y: auto;
+}
+
+.pageContainer::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .pageContainer{
+    padding: 3rem;
+  }
+}
+
+.pageHeader {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--main-theme-color);
+}
+
+.pageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordInputDiv {
+  position: relative;
+}
+
+.showPassword {
+  fill: var(--main-theme-color);
+  cursor: pointer;
+  position: absolute;
+  top: 1.3rem;
+  right: 1%;
+  /* padding: 1rem; */
+}
+
+.signInBtn {
+  background-color: var(--main-theme-color);
+  color: var(--bg-color);
+  font-size: 1rem;
+  padding: .8rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signUp {
+  color: var(--main-theme-color);
+  font-size: 1rem;
+  padding: .8rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.socialLogin {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialIconDiv {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.socialIconImg {
+  width: 100%;
+}
+
+.logOut{
+  background-color: var(--main-theme-color);
+  opacity: 0.8;
+  color: var(--bg-color);
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  height: fit-content;
+  padding: .4rem .8rem;
+  box-shadow:  0 0 5px var(--main-theme-color);
+}
+
+.inputDisable {
+  background-color: transparent;
+  color: var(--main-theme-color);
+  padding: 0 0.1em;
+  border: none;
+  box-shadow: none;
+  /* margin: 0; */
+  color: var(--text-color);
 }
