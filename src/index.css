@@ -235,3 +235,31 @@ li{
   /* margin: 0; */
   color: var(--text-color);
 }
+
+.sortCategory{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: .5rem 0;
+}
+
+.sortOption{
+  padding: 0.8rem .5rem;
+  cursor: pointer;
+  margin: 0 0.8rem;
+}
+
+.sortOptionSelected{
+  background-color: var(--main-theme-color);
+  border-radius: 10px;
+  padding: 0.8rem .5rem;
+  cursor: pointer;
+  margin: 0 0.8rem;
+}
+
+.sortOption:hover{
+  background-color: var(--main-theme-color);
+  border-radius: 10px;
+}
