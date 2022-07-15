@@ -248,7 +248,7 @@ li{
 .sortOption{
   padding: 0.8rem .5rem;
   cursor: pointer;
-  margin: 0 0.8rem;
+  margin: 0.2rem 0.8rem;
 }
 
 .sortOptionSelected{
@@ -256,10 +256,33 @@ li{
   border-radius: 10px;
   padding: 0.8rem .5rem;
   cursor: pointer;
-  margin: 0 0.8rem;
+  margin: 0.2rem 0.8rem;
 }
 
 .sortOption:hover{
   background-color: var(--main-theme-color);
   border-radius: 10px;
+}
+
+.listExercise {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  row-gap: 1rem;
+  column-gap: .5rem;
+}
+
+.exercise {
+  background-color: var(--bg-color);
+  padding: .3rem .8rem;
+  border-radius: 10px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  cursor: pointer;
+}
+
+.exercise:hover{
+  opacity: 0.6;
 }
