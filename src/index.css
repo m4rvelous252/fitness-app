@@ -11,9 +11,9 @@
   --main-theme-color: rgb(12, 187, 172);
   --bg-color: #000000;
   --text-color: #ffffff;
-  --accent-color: rgb(11, 114, 105);
+  --accent-color: rgb(120, 252, 244);
   --grey: #d1cecd;
-  --overlay: rgb(11, 114, 105, 0.85);
+  --overlay: rgb(120, 252, 244, 0.85);
 }
 
 html::-webkit-scrollbar {
@@ -285,4 +285,29 @@ li{
 
 .exercise:hover{
   opacity: 0.6;
+}
+
+.description p{
+  margin: 0.8rem 0;
+}
+
+.images {
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.images li {
+  padding: 0.8rem 0;
+  background-color: var(--overlay);
+}
+
+.comments {
+  width: 100%;
+}
+
+.comments p {
+  margin: 0.8rem 0;
+  font-weight: 700;
+  color: var(--accent-color);
 }

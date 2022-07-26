@@ -205,7 +205,7 @@ function Exercises() {
           {
             listExercise.map(exercise => (
               <div onClick={e => navigateToExercise(e)} key={exercise.uuid} id={exercise.id} className="exercise">
-                <p>{exercise.name}</p>
+                {exercise.name}
               </div>
             ))
           }
